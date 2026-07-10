@@ -1,0 +1,31 @@
+# Ignore everything by default
+*
+
+# Keep repo metadata
+!.gitignore
+!README.md
+
+# Pi config
+!settings.json
+!keybindings.json
+!models.json
+!AGENTS.md
+!SYSTEM.md
+!APPEND_SYSTEM.md
+
+# Pi resources
+!themes/
+!themes/**
+!prompts/
+!prompts/**
+!skills/
+!skills/**
+!extensions/
+!extensions/**
+
+# Never version secrets, sessions, trust state, or package caches
+auth.json
+sessions/
+trust.json
+git/
+npm/
