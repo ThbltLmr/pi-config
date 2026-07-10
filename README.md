@@ -13,5 +13,8 @@ Personal configuration for [Pi](https://pi.dev).
 - Prompt templates:
   - `/atomic-commit`
   - `/catchup`
+- UX extensions:
+  - `starship-footer.ts` — Catppuccin footer with context, model, cwd, git, Codex/Claude limits, and cost
+  - `modal-editor.ts` — small Vim-like modal editor
 
 This repository intentionally excludes local auth tokens, sessions, trust state, and package caches.

@@ -3,5 +3,10 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "defaultThinkingLevel": "high",
-  "theme": "catppuccin-frappe"
+  "theme": "catppuccin-frappe",
+  "packages": [
+    "npm:@hypabolic/pi-hypa",
+    "npm:pi-web-access",
+    "npm:pi-subagents"
+  ]
 }
