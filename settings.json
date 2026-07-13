@@ -1,8 +1,21 @@
 {
   "lastChangelogVersion": "0.80.6",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
+  "defaultModel": "gpt-5.6-sol",
   "defaultThinkingLevel": "high",
+  "subagents": {
+    "modelScope": {
+      "enforce": true,
+      "allow": [
+        "openai-codex/gpt-5.6-luna",
+        "openai-codex/gpt-5.6-terra",
+        "openai-codex/gpt-5.6-sol",
+        "anthropic/claude-sonnet-5",
+        "anthropic/claude-opus-4-8",
+        "anthropic/claude-fable-5"
+      ]
+    }
+  },
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:@hypabolic/pi-hypa",
