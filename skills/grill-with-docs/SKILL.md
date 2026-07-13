@@ -1,6 +1,6 @@
 ---
 name: grill-with-docs
-description: Matt Pocock-style grilling: stress-test a plan or design while maintaining project glossary and lightweight ADRs. User-invoked via /skill:grill-with-docs.
+description: "Matt Pocock-style grilling: stress-test a plan or design while maintaining project glossary and lightweight ADRs. User-invoked via /skill:grill-with-docs."
 disable-model-invocation: true
 ---
 
