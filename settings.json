@@ -20,6 +20,7 @@
   "packages": [
     "npm:@hypabolic/pi-hypa",
     "npm:pi-web-access",
-    "npm:pi-subagents"
+    "npm:pi-subagents",
+    "npm:typebox@1.1.38"
   ]
 }
