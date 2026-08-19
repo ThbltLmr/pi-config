@@ -5,14 +5,14 @@ Personal configuration for [Pi](https://pi.dev).
 ## Included
 
 - Catppuccin Frappe theme
-- User-invoked skills:
-  - `/skill:handoff`
+- User-invoked skills (`disable-model-invocation: true`):
   - `/skill:grill-me`
-  - `/skill:grill-with-docs`
   - `/skill:teach-me`
-- Prompt templates:
-  - `/atomic-commit`
-  - `/catchup`
+  - `/skill:handoff`
+  - `/skill:catchup`
+- Model-invoked skills:
+  - `agent-browser`
+  - `atomic-commit`
 - UX extensions:
   - `starship-footer.ts` — Catppuccin footer with context, model, cwd, git, Codex/Claude limits, and cost
   - `modal-editor.ts` — small Vim-like modal editor
