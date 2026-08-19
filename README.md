@@ -13,6 +13,7 @@ Personal configuration for [Pi](https://pi.dev).
 - Model-invoked skills:
   - `agent-browser`
   - `atomic-commit`
+  - `unslop`
 - UX extensions:
   - `starship-footer.ts` — Catppuccin footer with context, model, cwd, git, Codex/Claude limits, and cost
   - `modal-editor.ts` — small Vim-like modal editor
