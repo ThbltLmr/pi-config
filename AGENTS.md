@@ -5,6 +5,7 @@
 
     <model-mapping>
         Cheapest: openai-codex/gpt-5.6-luna - luna is extremely cheap so you can use it on xhigh effort without issues
+        Medium: glm-5.3-flash
         High: openai-codex/gpt-5.6-sol
     </model-mapping>
 </using-subagents>
