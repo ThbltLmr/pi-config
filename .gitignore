@@ -29,3 +29,4 @@ sessions/
 trust.json
 git/
 npm/
+/extensions/herdr-agent-state.ts
