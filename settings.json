@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.85.0",
-  "defaultProvider": "opencode-go",
-  "defaultModel": "glm-5.3-flash",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "high",
   "subagents": {
     "modelScope": {
