@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Strip AI writing tells from long-form prose: summaries, reports, docs, specs, artifact and PR bodies. Use ONLY for multi-paragraph text, not for back-and-forth chat replies, code, or commit messages.
+description: "Strip AI writing tells from long-form prose: summaries, reports, docs, specs, artifact and PR bodies. Use ONLY for multi-paragraph text, not for back-and-forth chat replies, code, or commit messages."
 ---
 
 # Unslop
