@@ -38,6 +38,7 @@ type CodexUsage = {
 
 type CodexRateWindow = {
 	used_percent?: number | string | null;
+	limit_window_seconds?: number | string | null;
 	reset_after_seconds?: number | string | null;
 	reset_at?: number | string | null;
 };
@@ -225,20 +226,29 @@ function formatAnthropicUsage(usage: AnthropicUsage | undefined): string[] {
 	return [];
 }
 
-function formatCodexWindow(label: string, window: CodexRateWindow | null | undefined): string | undefined {
+function formatCodexWindow(fallbackLabel: string, window: CodexRateWindow | null | undefined): string | undefined {
 	const percent = toNumber(window?.used_percent);
 	if (percent === undefined) return undefined;
+	// Primary/secondary describe priority, not duration: weekly-only plans
+	// put their seven-day limit in primary_window.
+	const windowSeconds = toNumber(window?.limit_window_seconds);
+	let label = fallbackLabel;
+	if (windowSeconds !== undefined && windowSeconds > 0) {
+		const units = [[86_400, "d"], [3_600, "h"], [60, "m"], [1, "s"]] as const;
+		const [seconds, unit] = units.find(([seconds]) => windowSeconds % seconds === 0) ?? [1, "s"];
+		label = `${windowSeconds / seconds}${unit}`;
+	}
 	const resetAfter = toNumber(window?.reset_after_seconds);
 	const resetAt = toNumber(window?.reset_at);
 	const resetSuffix = resetAfter !== undefined && resetAt !== undefined ? ` ${formatDuration(resetAfter)}→${formatEpochSeconds(resetAt)}` : "";
 	return `Codex ${label}:${Math.round(percent)}%${resetSuffix}`;
 }
 
-function formatCodexUsage(usage: CodexUsage | undefined): string[] {
+export function formatCodexUsage(usage: CodexUsage | undefined): string[] {
 	if (!usage) return [];
-	const fiveHour = formatCodexWindow("5h", usage.rate_limit?.primary_window);
-	const sevenDay = formatCodexWindow("7d", usage.rate_limit?.secondary_window);
-	return [fiveHour, sevenDay].filter(Boolean) as string[];
+	const primary = formatCodexWindow("primary", usage.rate_limit?.primary_window);
+	const secondary = formatCodexWindow("secondary", usage.rate_limit?.secondary_window);
+	return [primary, secondary].filter(Boolean) as string[];
 }
 
 function activeQuotaSegments(ctx: ExtensionContext, anthropic: AnthropicUsage | undefined, codex: CodexUsage | undefined): string[] {
