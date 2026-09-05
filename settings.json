@@ -24,6 +24,9 @@
     "npm:pi-web-access",
     "npm:pi-subagents",
     "npm:typebox@1.1.38",
-    "npm:pi-autoresearch"
+    "npm:pi-autoresearch",
+    "./plugins/pi-btw",
+    "./plugins/pi-modal-editor",
+    "./plugins/pi-starship-footer"
   ]
 }

@@ -1,0 +1,9 @@
+[submodule "plugins/pi-btw"]
+	path = plugins/pi-btw
+	url = https://github.com/ThbltLmr/pi-btw.git
+[submodule "plugins/pi-modal-editor"]
+	path = plugins/pi-modal-editor
+	url = https://github.com/ThbltLmr/pi-modal-editor.git
+[submodule "plugins/pi-starship-footer"]
+	path = plugins/pi-starship-footer
+	url = https://github.com/ThbltLmr/pi-starship-footer.git

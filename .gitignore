@@ -3,6 +3,7 @@
 
 # Keep repo metadata
 !.gitignore
+!.gitmodules
 !README.md
 
 # Pi config
@@ -12,6 +13,12 @@
 !AGENTS.md
 !SYSTEM.md
 !APPEND_SYSTEM.md
+
+# Plugin repositories are tracked as submodules, not copied files.
+!plugins/
+!plugins/pi-btw
+!plugins/pi-modal-editor
+!plugins/pi-starship-footer
 
 # Pi resources
 !themes/
