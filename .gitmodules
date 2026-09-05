@@ -7,3 +7,6 @@
 [submodule "plugins/pi-starship-footer"]
 	path = plugins/pi-starship-footer
 	url = https://github.com/ThbltLmr/pi-starship-footer.git
+[submodule "plugins/pi-stash"]
+	path = plugins/pi-stash
+	url = https://github.com/ThbltLmr/pi-stash.git

@@ -11,8 +11,11 @@ Each plugin is a Git submodule. This repository records its remote URL and pins 
 | `plugins/pi-btw` | [pi-btw](https://github.com/ThbltLmr/pi-btw) | Ephemeral `/btw` side questions |
 | `plugins/pi-modal-editor` | [pi-modal-editor](https://github.com/ThbltLmr/pi-modal-editor) | Vim-style prompt editing |
 | `plugins/pi-starship-footer` | [pi-starship-footer](https://github.com/ThbltLmr/pi-starship-footer) | Context, model, git, quota, and cost footer |
+| `plugins/pi-stash` | [pi-stash](https://github.com/ThbltLmr/pi-stash) | `Ctrl+S` prompt stash with cursor, paste, and Vim state |
 
 `settings.json` loads these as relative local packages. Do not also install the same plugins through `pi install`, or leave copies in `extensions/`, since that can register them twice. Run `/reload` after changing the configuration or plugin source.
+
+Keep `pi-stash` after `pi-modal-editor` in the package list so it wraps the Vim editor. Press `Ctrl+S` to stash a draft, then again on an empty prompt to restore it. If both slots contain text, the shortcut swaps them. Stashes are memory-only and do not include image attachments.
 
 The parent also tracks themes, skills, agent instructions, and other selected settings. It does not track authentication, sessions, trust state, or installed-package caches.
 
@@ -69,6 +72,7 @@ This restores the versions recorded by the parent; it does not advance every plu
 ```sh
 npm --prefix plugins/pi-modal-editor test
 npm --prefix plugins/pi-starship-footer test
+PI_MODAL_EDITOR_ROOT="$PWD/plugins/pi-modal-editor" npm --prefix plugins/pi-stash test
 
 # The btw development tests need their local dev dependencies.
 (cd plugins/pi-btw && npm ci --ignore-scripts && npm test && npm run typecheck)
