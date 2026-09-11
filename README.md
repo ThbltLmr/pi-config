@@ -12,7 +12,7 @@ Each plugin is a Git submodule. This repository records its remote URL and pins 
 | `plugins/pi-modal-editor` | [pi-modal-editor](https://github.com/ThbltLmr/pi-modal-editor) | Vim-style prompt editing |
 | `plugins/pi-starship-footer` | [pi-starship-footer](https://github.com/ThbltLmr/pi-starship-footer) | Context, model, git, quota, and cost footer |
 | `plugins/pi-stash` | [pi-stash](https://github.com/ThbltLmr/pi-stash) | `Ctrl+S` prompt stash with cursor, paste, and Vim state |
-| `plugins/pi-subagents` | [pi-subagents](https://github.com/ThbltLmr/pi-subagents/tree/personal) | Upstream fork with a neutral parent tool description |
+| `plugins/pi-subagents` | [pi-subagents](https://github.com/ThbltLmr/pi-subagents/tree/personal) | Task-only children, fresh context, no bundled personas |
 
 `settings.json` loads these as relative local packages. Do not also install the same plugins through `pi install`, or leave copies in `extensions/`, since that can register them twice. Run `/reload` after changing the configuration or plugin source.
 
@@ -61,7 +61,7 @@ git push --recurse-submodules=check
 
 Submodules restored with `git submodule update` may have a detached HEAD. Switch to a branch before making commits. If the pinned commit is ahead of an existing local branch, reconcile that branch before editing rather than silently moving the parent pin backwards.
 
-The subagent fork uses `personal` rather than `main`. It starts at upstream v0.67.0 and keeps upstream history and the MIT license. Its `subagent` description is `Run configured subagents.`, with no prompt snippet, guidelines, or appended delegation policy. The advertised-agent catalog keeps names and descriptions without selection instructions. See [FORK.md](plugins/pi-subagents/FORK.md) for the remaining prompt behavior and upstream update procedure. Keep `npm:pi-subagents` out of `settings.json` to avoid loading both versions.
+The subagent fork uses `personal` rather than `main`. It starts at upstream v0.67.0 and keeps upstream history and the MIT license. Launch plain children with `subagent({ task: "..." })`; context defaults to fresh, and explicit fork remains available. No native or external CLI profiles are bundled. Optional custom profiles, workflows, supervision, isolation, and results remain supported. The parent tool description is `Run subagents.`, without delegation policy. See [FORK.md](plugins/pi-subagents/FORK.md) for details and the upstream update procedure. Keep `npm:pi-subagents` out of `settings.json` to avoid loading both versions.
 
 ## Pull the pinned versions
 
