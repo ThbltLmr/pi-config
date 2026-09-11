@@ -12,6 +12,7 @@ Each plugin is a Git submodule. This repository records its remote URL and pins 
 | `plugins/pi-modal-editor` | [pi-modal-editor](https://github.com/ThbltLmr/pi-modal-editor) | Vim-style prompt editing |
 | `plugins/pi-starship-footer` | [pi-starship-footer](https://github.com/ThbltLmr/pi-starship-footer) | Context, model, git, quota, and cost footer |
 | `plugins/pi-stash` | [pi-stash](https://github.com/ThbltLmr/pi-stash) | `Ctrl+S` prompt stash with cursor, paste, and Vim state |
+| `plugins/pi-subagents` | [pi-subagents](https://github.com/ThbltLmr/pi-subagents/tree/personal) | Upstream fork with a neutral parent tool description |
 
 `settings.json` loads these as relative local packages. Do not also install the same plugins through `pi install`, or leave copies in `extensions/`, since that can register them twice. Run `/reload` after changing the configuration or plugin source.
 
@@ -31,6 +32,12 @@ For an existing checkout:
 
 ```sh
 git submodule update --init --recursive
+```
+
+Install the subagent fork's dependencies after cloning or updating its pinned version:
+
+```sh
+npm --prefix plugins/pi-subagents ci --ignore-scripts --no-audit --no-fund
 ```
 
 Back up an existing `~/.pi/agent` before replacing it. A Git checkout is not a backup of ignored credentials or sessions.
@@ -54,6 +61,8 @@ git push --recurse-submodules=check
 
 Submodules restored with `git submodule update` may have a detached HEAD. Switch to a branch before making commits. If the pinned commit is ahead of an existing local branch, reconcile that branch before editing rather than silently moving the parent pin backwards.
 
+The subagent fork uses `personal` rather than `main`. It starts at upstream v0.67.0 and keeps upstream history and the MIT license. Its `subagent` description is `Run configured subagents.`, with no prompt snippet, guidelines, or appended delegation policy. The advertised-agent catalog keeps names and descriptions without selection instructions. See [FORK.md](plugins/pi-subagents/FORK.md) for the remaining prompt behavior and upstream update procedure. Keep `npm:pi-subagents` out of `settings.json` to avoid loading both versions.
+
 ## Pull the pinned versions
 
 With clean parent and plugin worktrees:
@@ -72,6 +81,9 @@ This restores the versions recorded by the parent; it does not advance every plu
 ```sh
 npm --prefix plugins/pi-modal-editor test
 npm --prefix plugins/pi-starship-footer test
+npm --prefix plugins/pi-subagents run typecheck
+npm --prefix plugins/pi-subagents test
+npm --prefix plugins/pi-subagents run test:integration
 PI_MODAL_EDITOR_ROOT="$PWD/plugins/pi-modal-editor" npm --prefix plugins/pi-stash test
 
 # The btw development tests need their local dev dependencies.
@@ -82,8 +94,8 @@ The modal-editor suite uses the installed Pi package. Its README documents the `
 
 ## Publication boundary
 
-The plugin repositories start with fresh history and a GitHub noreply commit identity. They contain selected source and tests, package metadata, documentation, and applicable third-party notices, not this repository's configuration or history.
+The original custom plugin repositories start with fresh history and a GitHub noreply commit identity. The `pi-subagents` fork preserves upstream history and license; personal commits use the same noreply identity. They contain selected source and tests, package metadata, documentation, and applicable third-party notices, not this repository's configuration or history.
 
 The split does not remove anything from this parent repository's existing history. `.gitignore` prevents accidental additions; it cannot erase previously committed data. Review staged files and commit metadata before every public push.
 
-No project license has been selected for the plugins yet. They remain `UNLICENSED`; `private: true` in their package manifests prevents accidental npm publication, not public GitHub hosting.
+No project license has been selected for the original custom plugins yet. They remain `UNLICENSED`. The `pi-subagents` fork retains upstream's MIT license. `private: true` in the package manifests prevents accidental npm publication, not public GitHub hosting.

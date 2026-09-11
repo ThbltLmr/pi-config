@@ -10,3 +10,7 @@
 [submodule "plugins/pi-stash"]
 	path = plugins/pi-stash
 	url = https://github.com/ThbltLmr/pi-stash.git
+[submodule "plugins/pi-subagents"]
+	path = plugins/pi-subagents
+	url = https://github.com/ThbltLmr/pi-subagents.git
+	branch = personal

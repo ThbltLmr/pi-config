@@ -20,6 +20,7 @@
 !plugins/pi-modal-editor
 !plugins/pi-starship-footer
 !plugins/pi-stash
+!plugins/pi-subagents
 
 # Pi resources
 !themes/

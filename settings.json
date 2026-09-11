@@ -22,7 +22,7 @@
   "theme": "catppuccin-frappe",
   "packages": [
     "npm:pi-web-access",
-    "npm:pi-subagents",
+    "./plugins/pi-subagents",
     "npm:typebox@1.1.38",
     "npm:pi-autoresearch",
     "./plugins/pi-btw",
