@@ -29,5 +29,17 @@
     "./plugins/pi-modal-editor",
     "./plugins/pi-starship-footer",
     "./plugins/pi-stash"
+  ],
+  "enabledModels": [
+    "openai-codex/gpt-6-astra",
+    "openai-codex/gpt-5.6-sol",
+    "openai-codex/gpt-5.6-luna",
+    "openai-codex/gpt-5.6-terra",
+    "opencode-go/glm-5.3-flash",
+    "opencode/kimi-k3",
+    "opencode/gemini-3.8-flash",
+    "anthropic/claude-opus-5",
+    "anthropic/claude-fable-5-1",
+    "anthropic/claude-sonnet-5"
   ]
 }

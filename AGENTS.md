@@ -9,3 +9,10 @@
         High: openai-codex/gpt-5.6-sol
     </model-mapping>
 </using-subagents>
+
+<file-references>
+    The user uses Neovim; clickable file links do not open in their workflow.
+    Reference local files as visible, copyable paths in inline code, preferably repo-relative with line numbers: `src/example.ts:42`.
+    Do not use Markdown links, file:// URLs, or descriptive link labels for local files. Include the actual path instead.
+    When useful, provide a command such as `nvim +42 src/example.ts`. Normal web links are fine.
+</file-references>
