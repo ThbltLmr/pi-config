@@ -7,9 +7,6 @@
     "modelScope": {
       "enforce": true,
       "allow": [
-        "openai-codex/gpt-5.6-luna",
-        "openai-codex/gpt-5.6-terra",
-        "openai-codex/gpt-5.6-sol",
         "anthropic/claude-sonnet-5",
         "anthropic/claude-opus-4-8",
         "anthropic/claude-opus-5",
@@ -40,7 +37,6 @@
     "anthropic/claude-fable-5-1",
     "anthropic/claude-sonnet-5",
     "openai-codex/gpt-6-luna",
-    "openai-codex/gpt-6-sol",
     "openai-codex/gpt-6.1-sol"
   ]
 }
