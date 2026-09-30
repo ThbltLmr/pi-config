@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.87.1",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-6-astra",
+  "defaultModel": "gpt-6.1-sol",
   "defaultThinkingLevel": "high",
   "subagents": {
     "modelScope": {
@@ -15,7 +15,8 @@
         "anthropic/claude-opus-5",
         "anthropic/claude-fable-5",
         "opencode-go/glm-5.3-flash",
-        "opencode-go/glm-5.3"
+        "opencode-go/glm-5.3",
+        "openai-codex/gpt-6.1-sol"
       ]
     }
   },
@@ -39,6 +40,7 @@
     "anthropic/claude-fable-5-1",
     "anthropic/claude-sonnet-5",
     "openai-codex/gpt-6-luna",
-    "openai-codex/gpt-6-sol"
+    "openai-codex/gpt-6-sol",
+    "openai-codex/gpt-6.1-sol"
   ]
 }
