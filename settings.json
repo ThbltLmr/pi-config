@@ -13,7 +13,8 @@
         "anthropic/claude-fable-5",
         "opencode-go/glm-5.3-flash",
         "opencode-go/glm-5.3",
-        "openai-codex/gpt-6.1-sol"
+        "openai-codex/gpt-6.1-sol",
+        "openai-codex/gpt-6-luna"
       ]
     }
   },
