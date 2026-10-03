@@ -7,12 +7,8 @@
     "modelScope": {
       "enforce": true,
       "allow": [
-        "anthropic/claude-sonnet-5",
-        "anthropic/claude-opus-4-8",
-        "anthropic/claude-opus-5",
-        "anthropic/claude-fable-5",
+        "anthropic/claude-opus-5-5",
         "opencode-go/glm-5.3-flash",
-        "opencode-go/glm-5.3",
         "openai-codex/gpt-6.1-sol",
         "openai-codex/gpt-6-luna"
       ]
@@ -32,12 +28,11 @@
   "enabledModels": [
     "openai-codex/gpt-6-astra",
     "opencode-go/glm-5.3-flash",
-    "opencode/kimi-k3",
-    "opencode/gemini-3.8-flash",
-    "anthropic/claude-opus-5",
+    "opencode-go/kimi-k3",
+    "anthropic/claude-opus-5-5",
     "anthropic/claude-fable-5-1",
-    "anthropic/claude-sonnet-5",
     "openai-codex/gpt-6-luna",
-    "openai-codex/gpt-6.1-sol"
+    "openai-codex/gpt-6.1-sol",
+    "opencode-go/deepseek-v4.1-flash"
   ]
 }
