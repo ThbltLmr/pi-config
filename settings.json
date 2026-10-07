@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.0.4",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6.1-sol",
   "defaultThinkingLevel": "high",
@@ -9,6 +9,8 @@
       "allow": [
         "anthropic/claude-opus-5-5",
         "opencode-go/glm-5.3-flash",
+        "opencode-go/deepseek-v4.1-flash",
+        "opencode/mistral-large-4",
         "openai-codex/gpt-6.1-sol",
         "openai-codex/gpt-6-luna"
       ]
@@ -28,6 +30,7 @@
   "enabledModels": [
     "openai-codex/gpt-6-astra",
     "opencode-go/glm-5.3-flash",
+    "opencode/mistral-large-4",
     "opencode-go/kimi-k3",
     "anthropic/claude-opus-5-5",
     "anthropic/claude-fable-5-1",
